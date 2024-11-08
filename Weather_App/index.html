@@ -33,5 +33,49 @@
             </div>
         </div>
     </div>
+
+    <!--Add Api and logic of weather-->
+    <script>
+        const apiKEY = "d1d4301ddf2d932520de4798ef6ee1d5";
+        const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        
+        const searchBox = document.querySelector(".search input");
+        const searchBtn = document.querySelector(".search button");
+        const card = document.querySelector(".card"); // Selecciona la tarjeta para cambiar su fondo
+    
+        async function checkWeather(city) {
+            const response = await fetch(apiURL + city + `&appid=${apiKEY}`);
+            let data = await response.json();
+            
+            console.log(data);
+    
+            document.querySelector(".city").innerHTML = data.name;
+            document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+            document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+            document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+            
+            // Cambia el fondo en función de la temperatura
+            updateBackground(data.main.temp);
+        }
+    
+        function updateBackground(temperature) {
+            if (temperature >= 28) {
+                // (para temperaturas cálidas)
+                card.style.background = "linear-gradient(135deg, #ff0000, #ffcc00)";
+            } else if (temperature >= 18 && temperature < 28) {
+                // (temperaturas moderadas)
+                card.style.background = "linear-gradient(135deg, #00feba, #5b548a)";
+            } else {
+            // (temperaturas frías)
+                card.style.background = "linear-gradient(135deg, #89CFF0, #D4F1F9)";
+            }
+        }
+    
+        searchBtn.addEventListener("click", () => {
+            checkWeather(searchBox.value);
+        });
+    </script>
+    
+
 </body>
 </html>
