@@ -80,3 +80,10 @@ body {
     font-size: 28px;
     margin-top: -6px;
 }
+.error{
+    text-aling: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top:10px;
+    display: none;
+}
