@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toast Notification</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="buttons">
-        <button onclick="showToast()">Success</button>
-        <button onclick="showToast()">Error</button>
-        <button onclick="showToast()">Invalid</button>
+        <button onclick="showToast('success', 'Successfully submitted', 'fa-check-circle')">Success</button>
+        <button onclick="showToast('error', 'Please fix the error', 'fa-times-circle')">Error</button>
+        <button onclick="showToast('invalid', 'Invalid input, check again', 'fa-exclamation-circle')">Invalid</button>
     </div>
-    <div class="toastBox">
 
-    </div>
+    <div class="toastBox"></div>
+
+    <script>
+        // Capturar el contenedor de las notificaciones
+        let toastBox = document.querySelector('.toastBox');
+
+        function showToast(type, msg, icon) {
+            let toast = document.createElement('div');
+            toast.classList.add('toast', type); // Añadir clase según el tipo
+
+            // Construir el contenido del toast con el ícono
+            toast.innerHTML = `
+                <i class="fas ${icon}"></i> 
+                <span>${msg}</span>
+            `;
+
+            toastBox.appendChild(toast);
+
+            // Eliminar la notificación después de 3 segundos
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+    </script>
 </body>
+
 </html>
