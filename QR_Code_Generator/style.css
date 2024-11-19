@@ -60,3 +60,20 @@ body{
     margin: 10px auto;
     border: 1px solid #d1d1d1;
 }
+/* Clase para mostrar un borde rojo cuando hay error */
+.error {
+    border: 2px solid red;
+    animation: shake 0.3s;
+}
+
+/* Animación de "sacudida" para el input */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+}
+
+/* Clase para mostrar la imagen (puedes adaptarla según tu diseño) */
+.show-img {
+    display: block;
+}
