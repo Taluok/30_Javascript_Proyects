@@ -21,9 +21,9 @@
                     <span class="iconify" data-icon="uil:angle-left" data-width="24"></span>
                 </div>
                 <!-- Botón de menú -->
-                <div class="circle">
+                <!--<div class="circle">
                     <span class="iconify" data-icon="material-symbols:menu" data-width="24"></span>
-                </div>
+                </div>-->
                 <!-- Botón de avance -->
                 <div class="circle">
                     <span class="iconify" data-icon="uil:angle-right" data-width="24"></span>
@@ -36,7 +36,7 @@
             <p>Yarin Primak Remix</p>
 
             <!-- Control de audio -->
-            <audio controls>
+            <audio id="song">
                 <source src="image/Yarin Primak - Hey You - Yarin Primak Remix.mp3" type="audio/mpeg">
             </audio>
             
@@ -47,8 +47,9 @@
                 <div class="circle">
                     <ion-icon name="play-back" style="font-size: 24px;"></ion-icon>
                 </div>
-                <div class="circle">
-                    <span class="iconify" data-icon="line-md:play-filled" style="font-size: 24px;"></span>
+                <div class="circle" onclick="playPause()">
+                    <!-- Aquí es donde cambiaremos el ícono entre play y pause -->
+                    <span class="iconify" data-icon="line-md:play-filled" style="font-size: 24px;" id="ctrlIcon"></span>
                 </div>
                 <div class="circle">
                     <span class="iconify" data-icon="heroicons-solid:forward" style="font-size: 24px;"></span>
