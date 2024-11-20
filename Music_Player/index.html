@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Iconify Script -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    
+    <!-- Ionicons Script -->
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <!-- Botón de retroceso -->
+                <div class="circle">
+                    <span class="iconify" data-icon="uil:angle-left" data-width="24"></span>
+                </div>
+                <!-- Botón de menú -->
+                <div class="circle">
+                    <span class="iconify" data-icon="material-symbols:menu" data-width="24"></span>
+                </div>
+                <!-- Botón de avance -->
+                <div class="circle">
+                    <span class="iconify" data-icon="uil:angle-right" data-width="24"></span>
+                </div>
+            </nav>
+            
+            <!-- Imagen y detalles de la canción -->
+            <img src="image/468-thumbnail.png" class="song-img">
+            <h1>Hey You</h1>
+            <p>Yarin Primak Remix</p>
+
+            <!-- Control de audio -->
+            <audio controls>
+                <source src="image/Yarin Primak - Hey You - Yarin Primak Remix.mp3" type="audio/mpeg">
+            </audio>
+            
+            <!-- Barra de progreso -->
+            <input type="range" value="0" id="progress">
+
+            <div class="controls">
+                <div class="circle">
+                    <ion-icon name="play-back" style="font-size: 24px;"></ion-icon>
+                </div>
+                <div class="circle">
+                    <span class="iconify" data-icon="line-md:play-filled" style="font-size: 24px;"></span>
+                </div>
+                <div class="circle">
+                    <span class="iconify" data-icon="heroicons-solid:forward" style="font-size: 24px;"></span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
