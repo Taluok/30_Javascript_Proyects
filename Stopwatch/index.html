@@ -8,12 +8,17 @@
 </head>
 <body>
     <div class="stopwatch">
-        <h1>00 : 00 : 00</h1>
+        <!-- Elemento donde se mostrará el tiempo -->
+        <h1 id="displayTime">00:00:00</h1>
+        
+        <!-- Botones para las acciones -->
         <div class="buttons">
-            <img src="images/stop.png">
-            <img src="images/start.png">
-            <img src="images/reset.png">
+            <img src="images/stop.png" alt="Stop" onclick="watchStop()">
+            <img src="images/start.png" alt="Start" onclick="watchStart()">
+            <img src="images/reset.png" alt="Reset" onclick="watchReset()">
         </div>
     </div>
+    <!-- Archivo JavaScript con la lógica del cronómetro -->
+    <script src="script.js"></script>
 </body>
 </html>
