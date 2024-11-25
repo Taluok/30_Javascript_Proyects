@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <button type="button" class="btn" onclick="openPopup()">Submit</button>
+        <div class="popup" id="popup" aria-hidden="true">
+            <img src="images/404-tick.png" alt="Success Icon">
+            <h2>Thank you!</h2>
+            <p>Your details have been successfully submitted. Thanks!</p>
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+    <script>
+        // Seleccionamos el elemento del popup por su ID y lo almacenamos en la variable 'popup'
+        const popup = document.getElementById("popup");
+
+        /**
+         * Abre el popup.
+         * 1. Agrega la clase CSS 'open-popup' para hacer visible el popup.
+         * 2. Actualiza el atributo 'aria-hidden' a "false" para que sea accesible para lectores de pantalla.
+         */
+        function openPopup() {
+            popup.classList.add("open-popup"); // Muestra el popup aplicando estilos CSS.
+            popup.setAttribute("aria-hidden", "false"); // Indica que el popup ahora es visible.
+        }
+
+        /**
+         * Cierra el popup.
+         * 1. Elimina la clase CSS 'open-popup' para ocultar el popup.
+         * 2. Actualiza el atributo 'aria-hidden' a "true" para que los lectores de pantalla lo ignoren.
+         */
+        function closePopup() {
+            popup.classList.remove("open-popup"); // Oculta el popup eliminando los estilos CSS que lo muestran.
+            popup.setAttribute("aria-hidden", "true"); // Indica que el popup ya no es visible.
+        }
+
+        /**
+         * Detecta pulsaciones de teclas.
+         * Si la tecla presionada es "Escape" y el popup está abierto, se cierra automáticamente.
+         */
+        document.addEventListener("keydown", (event) => {
+            // Verifica si la tecla presionada es "Escape" y si el popup está visible.
+            if (event.key === "Escape" && popup.classList.contains("open-popup")) {
+                closePopup(); // Cierra el popup si ambas condiciones se cumplen.
+            }
+        });
+
+    </script>
+</body>
+
+</html>
