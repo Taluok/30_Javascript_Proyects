@@ -1,0 +1,146 @@
+/* Variables de colores para ambos modos */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --header-footer-bg: #f5f5f5;
+    --button-bg: #0078ff;
+    --button-color: #ffffff;
+    --card-bg: #f9f9f9;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Encabezado */
+.header {
+    background-color: var(--header-footer-bg);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#theme-toggle {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Contenido principal */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.text-section h2 {
+    margin: 20px 0;
+    font-size: 28px;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+.text-section p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0 20px;
+    color: var(--text-color);
+}
+
+/* Imagen */
+.image-section {
+    margin: 30px 0;
+}
+
+.image-section img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.image-section img:hover {
+    transform: scale(1.05);
+}
+
+/* Pie de página */
+.footer {
+    background-color: var(--header-footer-bg);
+    padding: 15px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 14px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer span {
+    color: #e63946;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilo del botón */
+button {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Adaptabilidad para dispositivos móviles */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .text-section h2 {
+        font-size: 24px;
+    }
+
+    .text-section p {
+        font-size: 16px;
+    }
+
+    #theme-toggle {
+        width: 35px;
+        height: 35px;
+    }
+}
+
