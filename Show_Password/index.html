@@ -7,11 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Caja de entrada que incluye el campo de contraseña y un ícono para mostrar/ocultar -->
     <div class="input-box">
+        <!-- Campo de entrada de tipo "password" -->
         <input type="password" placeholder="Password" id="password">
-        <img src="eye-close.png" id="eyeicon">
+        <!-- Icono del ojo para alternar entre mostrar y ocultar la contraseña -->
+        <img src="eye-close.png" id="eyeicon" alt="Toggle Password Visibility">
     </div>
 
-    
+    <script>
+        // Seleccionamos el ícono del ojo y el campo de entrada de contraseña por su ID
+        let eyeicon = document.getElementById("eyeicon");
+        let password = document.getElementById("password");
+
+        // Agregamos un evento "onclick" al ícono del ojo
+        eyeicon.onclick = function() {
+            // Verificamos el tipo actual del campo de entrada
+            if (password.type === "password") {
+                // Cambiamos el tipo de "password" a "text" para mostrar la contraseña
+                password.type = "text";
+
+                // Cambiamos la imagen del ícono a un ojo abierto
+                eyeicon.src = "eye-open.png";
+            } else {
+                // Cambiamos el tipo de "text" a "password" para ocultar la contraseña
+                password.type = "password";
+
+                // Cambiamos la imagen del ícono a un ojo cerrado
+                eyeicon.src = "eye-close.png";
+            }
+        };
+    </script>
 </body>
 </html>
