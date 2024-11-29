@@ -9,14 +9,33 @@
 <body>
     <div class="hero">
         <h3>Coming Soon!</h3>
-        <h1>OurBrand New <br>Website Is on It's Way</h1>
+        <h1>Our Brand New <br>Website Is on Its Way</h1>
         <p>Subscribe for more details.</p>
 
-        <form>
+        <form name="submit-to-google-sheet">
             <input type="email" placeholder="Enter your email" required>
             <button type="submit">Subscribe</button>
         </form>
-        <span>Thanks you for subscribing!</span>
+        <span class="response-message"></span>
     </div>
+    <script>
+        const scriptURL = '<SCRIPT_URL>'; // Reemplaza con tu URL de Google Apps Script
+        const form = document.forms['submit-to-google-sheet'];
+        const responseMessage = document.querySelector('.response-message');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    responseMessage.textContent = 'Thank you for subscribing!';
+                    responseMessage.style.color = 'green';
+                    form.reset(); // Limpia el formulario después del envío exitoso
+                })
+                .catch(error => {
+                    responseMessage.textContent = 'Something went wrong. Please try again!';
+                    responseMessage.style.color = 'red';
+                });
+        });
+    </script>
 </body>
 </html>
