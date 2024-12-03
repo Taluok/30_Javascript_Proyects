@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #222120, #272631, #3a3c45);
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del contenido para mayor flexibilidad */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.content h1 span {
+    color: #2e77f6;
+}
+
+.content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.content button {
+    background: transparent;
+    border: 2px solid #fff;
+    padding: 12px 25px;
+    color: #fff;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efecto hover */
+}
+
+.content button:hover {
+    background: #2e77f6;
+    color: #fff;
+}
+
+.launch-time {
+    display: flex;
+    gap: 20px; /* Añade separación entre bloques */
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.launch-time div {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.launch-time div p {
+    font-size: 60px;
+    margin-bottom: -14px;
+}
+
+.rocket {
+    width: 250px;
+    
+    animation: rocket-float 3s infinite ease-in-out; /* Animación */
+}
+
+/* Animación del cohete */
+@keyframes rocket-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
