@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #3b0538, #20205b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar {
+    width: 90%;
+    max-width: 350px; /* Adaptable en pantallas pequeñas */
+    height: auto;
+    padding: 20px; /* Espaciado interno */
+    background: #fff;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Relieve */
+}
+
+.left, .right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-align: center; /* Asegura centrado del texto */
+}
+
+.right {
+    background: #f4351e;
+    color: #fff;
+    border-radius: 0 10px 10px 0; /* Ajusta el borde */
+}
+
+.left {
+    color: #333; /* Texto más oscuro */
+    border-radius: 10px 0 0 10px; /* Ajusta el borde */
+}
+
+.left p:first-child {
+    font-size: 48px; /* Resalta el día */
+    font-weight: bold;
+    margin-bottom: 10px; /* Espaciado entre los textos */
+}
