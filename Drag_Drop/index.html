@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drag & Drop</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <div id="left">
@@ -16,5 +18,35 @@
         </div>
         <div id="right"></div>
     </div>
+
+    <script>
+        // Obtenemos las listas y las cajas
+        let lists = document.getElementsByClassName("list");
+        let rightBox = document.getElementById("right");
+        let leftBox = document.getElementById("left");
+
+        // Iteramos sobre cada elemento de la lista
+        for (let item of lists) {
+            item.setAttribute("draggable", "true"); // Aseguramos que sean arrastrables
+
+            // Evento para el inicio del arrastre
+            item.addEventListener("dragstart", function (e) {
+                let selected = e.target; // Guardamos el elemento seleccionado
+
+                // Evento para permitir el arrastre sobre el contenedor
+                rightBox.addEventListener("dragover", function (e) {
+                    e.preventDefault(); // Habilita la zona de drop
+                });
+
+                // Evento para manejar el drop
+                rightBox.addEventListener("drop", function (e) {
+                    rightBox.appendChild(selected); // Mueve el elemento al contenedor
+                    selected = null; // Limpia la referencia
+                });
+            });
+        }
+    </script>
+
 </body>
+
 </html>
